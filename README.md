@@ -1,13 +1,11 @@
-Absolutely. I’ve cleaned up the formatting so the lab sheet is easier to read, copy into Word/Google Docs, or print. I’ve also standardized the tables, headings, spacing, and code formatting without changing the actual requirements.
-
-C Programming Lab Exercise
+C PROGRAMMING LAB EXERCISE
 
 Level: Intermediate
 Duration: 2 Hours
 Language: C
 Total Marks: 120
 
-📚 Syllabus Coverage
+SYLLABUS COVERAGE
 
 This lab exercise covers the following C programming concepts:
 
@@ -20,64 +18,59 @@ Typecasting
 Formatted and unformatted input/output
 Identification and correction of programming errors
 Conditional statements
-Not Required
 
-The following topics are not required for this exercise:
+Note: Loops, arrays, user-defined functions, structures, and pointers are not required for this exercise.
 
-Loops
-Arrays
-User-defined functions
-Structures
-Pointers
-📝 General Instructions
-Write an algorithm or pseudocode before coding each problem.
+GENERAL INSTRUCTIONS
+Write an algorithm or pseudocode before coding each question.
 Use meaningful identifiers and appropriate data types.
 Use comments wherever necessary.
 Compile and execute each program.
 Test each program with at least two different sets of inputs.
 Identify and correct errors where specifically asked.
-Follow the concepts and additional requirements mentioned in each question.
-Question 1 — Student Result and Performance Analysis
+Follow all concepts and additional requirements mentioned in each question.
+Ensure that the output is properly formatted and easy to read.
+QUESTION 1 — STUDENT RESULT AND PERFORMANCE ANALYSIS
 
-Time: 25 minutes
+Time: 25 Minutes
 Marks: 20
 
 Problem Statement
 
-Write a C program to accept the following information:
+Write a C program to accept the following information about a student:
 
-Roll number
-Student name
+Roll Number
+Student Name
 Marks in Mathematics
 Marks in C Programming
 Marks in Computer Organization
 Marks in Mathematics Lab
 
-The program should calculate:
+The program should calculate and display:
 
-Total marks
+Total Marks
 Percentage
-Average marks
+Average Marks
 Whether the student has passed
 Whether the student has obtained distinction
 Pass Conditions
 
-A student passes only when:
+A student is considered PASS only when:
 
-Marks in each subject ≥ 40
-Overall percentage ≥ 40%
+Marks in each subject are greater than or equal to 40.
+Overall percentage is greater than or equal to 40%.
 Distinction Condition
 
-Distinction is awarded when:
+A student is awarded DISTINCTION when:
 
-The student has passed
-Percentage ≥ 75%
+The student has passed.
+Overall percentage is greater than or equal to 75%.
 Additional Requirements
 Use const for maximum marks.
 Use appropriate data types.
-Use logical and relational operators.
+Use relational and logical operators.
 Use typecasting wherever required to obtain the correct percentage.
-Display the result in a properly formatted form.
+Display the result in a properly formatted manner.
 Sample Output
 ========================================
            STUDENT RESULT
@@ -100,26 +93,26 @@ Distinction           : YES
 Concepts Covered
 Variables
 Constants
-Data types
-Arithmetic operators
-Relational operators
-Logical operators
+Data Types
+Arithmetic Operators
+Relational Operators
+Logical Operators
 Typecasting
 printf()
 scanf()
 Expressions
-Question 2 — Electricity Bill Calculation
+QUESTION 2 — ELECTRICITY BILL CALCULATION
 
-Time: 25 minutes
+Time: 25 Minutes
 Marks: 20
 
 Problem Statement
 
-Write a C program to accept:
+Write a C program to accept the following information:
 
-Consumer number
-Consumer name
-Number of electricity units consumed
+Consumer Number
+Consumer Name
+Number of Electricity Units Consumed
 
 Calculate the electricity bill according to the following tariff:
 
@@ -129,22 +122,26 @@ Next 100 units	₹4.00
 Next 200 units	₹5.50
 Above 400 units	₹7.00
 Additional Charges
-Fixed charge = ₹100
-Electricity duty = 5% of the energy charge
-Final bill = Energy charge + Fixed charge + Electricity duty
+
+The following additional charges must be included:
+
+Fixed Charge = ₹100
+Electricity Duty = 5% of the Energy Charge
+Final Bill = Energy Charge + Fixed Charge + Electricity Duty
 Required Output
 
-Display:
+The program must display:
 
-Consumer details
-Units consumed
-Energy charge
-Fixed charge
-Electricity duty
-Final bill
+Consumer Number
+Consumer Name
+Units Consumed
+Energy Charge
+Fixed Charge
+Electricity Duty
+Final Bill
 Example
 
-For 350 units, calculate the energy charge as:
+For 350 units, the energy charge should be calculated as:
 
 100 × 2.50
 + 100 × 4.00
@@ -157,42 +154,44 @@ Use the conditional operator (?:) to display:
 HIGH CONSUMPTION
 
 
-if consumption is greater than 400 units; otherwise display:
+if the electricity consumption is greater than 400 units.
+
+Otherwise, display:
 
 NORMAL CONSUMPTION
 
 Concepts Covered
-Arithmetic expressions
-Relational operators
-Conditional operator
+Arithmetic Expressions
+Relational Operators
+Conditional Operator
 Typecasting
 Constants
-Formatted I/O
-Operator precedence
-Question 3 — Simple Banking Transaction Calculator
+Formatted Input/Output
+Operator Precedence
+QUESTION 3 — SIMPLE BANKING TRANSACTION CALCULATOR
 
-Time: 20 minutes
+Time: 20 Minutes
 Marks: 20
 
 Problem Statement
 
-Write a C program that accepts:
+Write a C program that accepts the following information:
 
-Account holder's name
-Account number
-Current balance
-Deposit amount
-Withdrawal amount
+Account Holder's Name
+Account Number
+Current Balance
+Deposit Amount
+Withdrawal Amount
 
-Calculate the final balance.
+The program should calculate the final balance according to the rules given below.
 
 Rules
-Deposit amount must not be negative.
-Withdrawal amount must not be negative.
+The deposit amount must not be negative.
+The withdrawal amount must not be negative.
 Withdrawal is permitted only when sufficient balance is available.
 A minimum balance of ₹1,000 must be maintained after withdrawal.
-If the withdrawal cannot be processed, the balance should remain unchanged.
-Sample Output
+If the withdrawal cannot be processed, the balance must remain unchanged.
+Sample Output — Successful Transaction
 ========================================
         BANKING TRANSACTION
 ========================================
@@ -206,25 +205,25 @@ Final Balance  : ₹13000.00
 Transaction    : SUCCESS
 ========================================
 
-Unsuccessful Transaction
+Sample Output — Unsuccessful Transaction
 Transaction : FAILED
 Reason      : Minimum balance requirement not satisfied
 
 Challenge Requirement
 
-Use logical operators to combine the conditions for a valid withdrawal.
+Use logical operators to combine the conditions required for a valid withdrawal.
 
 Concepts Covered
-Relational operators
-Logical operators
-Assignment operators
-Arithmetic expressions
-Conditional operator
+Relational Operators
+Logical Operators
+Assignment Operators
+Arithmetic Expressions
+Conditional Operator
 float / double
-Formatted I/O
-Question 4 — Expression Evaluation and Type Conversion
+Formatted Input/Output
+QUESTION 4 — EXPRESSION EVALUATION AND TYPE CONVERSION
 
-Time: 20 minutes
+Time: 20 Minutes
 Marks: 20
 
 Problem Statement
@@ -245,7 +244,7 @@ E6 = a > b && b > c
 E7 = a > b ? a : b
 
 
-Display the result of every expression clearly.
+Display the result of each expression clearly.
 
 Example Input
 Enter a: 20
@@ -253,9 +252,12 @@ Enter b: 6
 Enter c: 3
 
 Questions to Answer
+
+After executing the program, answer the following questions:
+
 1. Why are E1 and E2 different?
 
-Explain how operator precedence and parentheses affect the evaluation.
+Explain how operator precedence and parentheses affect the evaluation of the two expressions.
 
 2. Why can E3 and E4 produce different results?
 
@@ -263,37 +265,37 @@ Explain the difference between integer division and floating-point division.
 
 3. What is the purpose of (float)a?
 
-Explain how typecasting changes the type of the expression.
+Explain how typecasting changes the type of an expression.
 
 4. What type of result is produced by E6?
 
-Explain the result of a logical expression in C.
+Explain the result produced by a logical expression in C.
 
 5. What does E7 represent?
 
-Explain the conditional operator and what value E7 selects.
+Explain the conditional operator and identify which value E7 selects.
 
 6. Identify the operators according to their precedence.
 
-Discuss the precedence of the operators used in the expressions.
+Discuss the precedence and associativity of the operators used in the given expressions.
 
 Concepts Covered
-Operator precedence
+Operator Precedence
 Associativity
-Arithmetic operators
-Relational operators
-Logical operators
-Conditional operator
+Arithmetic Operators
+Relational Operators
+Logical Operators
+Conditional Operator
 Typecasting
-Expression evaluation
-Question 5 — Debug and Correct the Program
+Expression Evaluation
+QUESTION 5 — DEBUG AND CORRECT THE PROGRAM
 
-Time: 20 minutes
+Time: 20 Minutes
 Marks: 20
 
 Problem Statement
 
-The following program is intended to accept two numbers and calculate their sum, average, and compare them.
+The following C program is intended to accept two numbers and calculate their sum and average, and then compare the two numbers.
 
 However, the program contains several errors.
 
@@ -327,61 +329,69 @@ int main()
 }
 
 Tasks
-Compile the program.
-Identify all errors.
-Classify each error where applicable:
-Syntax error
-Semantic/type-related error
-Logical error
-Runtime/undefined-behavior issue
+
+Perform the following tasks:
+
+Compile the given program.
+Identify all errors in the program.
+Classify each error, where applicable, as:
+Syntax Error
+Semantic/Type-Related Error
+Logical Error
+Runtime/Undefined-Behavior Issue
 Correct the program.
-Execute the corrected program using at least two sets of input.
+Compile and execute the corrected program.
+Test the corrected program using at least two different sets of input.
 Minimum Issues to Investigate
 
-Carefully examine:
+Carefully examine the following:
 
 Format specifiers
 Address operator &
 Integer versus floating-point division
 printf() format specifiers
-Assignment (=) versus comparison (==)
+Assignment operator (=) versus equality operator (==)
 Data types
 scanf() usage
 Concepts Covered
-Programming errors
-Format specifiers
+Programming Errors
+Format Specifiers
 scanf()
 printf()
 Expressions
-Relational operators
-Assignment operator
-Type conversion
-Question 6 — Mini Integrated Problem
+Relational Operators
+Assignment Operator
+Type Conversion
+QUESTION 6 — MINI INTEGRATED SHOPPING BILL
 
-Time: 20 minutes
+Time: 20 Minutes
 Marks: 20
 
 Problem Statement
 
-Write a C program for a shopping bill calculator.
+Write a C program to prepare a shopping bill.
 
-Input
+The program should accept the following information:
 
-Accept:
-
-Customer name
-Item 1 price
-Item 1 quantity
-Item 2 price
-Item 2 quantity
-Item 3 price
-Item 3 quantity
+Customer Name
+Item 1 Price
+Item 1 Quantity
+Item 2 Price
+Item 2 Quantity
+Item 3 Price
+Item 3 Quantity
 Calculate
-Cost of each item
+
+The program should calculate:
+
+Cost of Item 1
+Cost of Item 2
+Cost of Item 3
 Subtotal
 Discount
+Amount after Discount
 GST
-Final bill
+Final Bill
 Discount Rules
 Subtotal	Discount
 Less than ₹1,000	0%
@@ -389,7 +399,10 @@ Less than ₹1,000	0%
 ₹5,000 – ₹9,999	10%
 ₹10,000 or above	15%
 GST
-GST = 18% of the amount after discount
+
+GST is calculated as:
+
+GST = 18% of the Amount After Discount
 
 Sample Output
 ================================================
@@ -413,25 +426,25 @@ FINAL BILL                            4203.75
 ================================================
 
 Additional Requirements
-Use const for GST.
+Use const for the GST rate.
 Use the conditional operator or nested conditional expressions to determine the discount rate.
 Use appropriate floating-point calculations.
-Display monetary values with two decimal places.
+Display all monetary values with exactly two decimal places.
 Concepts Covered
 Variables
 Constants
-Arithmetic operators
-Relational operators
-Conditional operator
+Arithmetic Operators
+Relational Operators
+Conditional Operator
 Typecasting
-Formatted I/O
+Formatted Input/Output
 Expressions
-Operator precedence
-📋 Lab Submission Checklist
+Operator Precedence
+LAB SUBMISSION CHECKLIST
 
-Before submitting, make sure:
+Before submitting the lab exercise, make sure that:
 
- An algorithm/pseudocode is written for every question.
+ An algorithm or pseudocode is written for every question.
  Meaningful variable names are used.
  Appropriate data types are selected.
  Constants are declared using const where required.
@@ -442,7 +455,7 @@ Before submitting, make sure:
  Output is properly formatted.
  Errors in Question 5 have been identified and classified.
  The corrected Question 5 program has been tested.
-🧪 Suggested Test Cases
+SUGGESTED TEST CASES
 
 Students should test their programs with different types of input, including:
 
@@ -452,7 +465,7 @@ Minimum values
 Maximum or large values
 Invalid values where applicable
 Values that test different conditional branches
-📊 Marks Distribution
+MARKS DISTRIBUTION
 Question	Topic	Time	Marks
 Q1	Student Result & Performance Analysis	25 min	20
 Q2	Electricity Bill Calculation	25 min	20
@@ -460,8 +473,8 @@ Q3	Banking Transaction Calculator	20 min	20
 Q4	Expression Evaluation & Type Conversion	20 min	20
 Q5	Debug & Correct the Program	20 min	20
 Q6	Mini Integrated Shopping Bill	20 min	20
-Total		2 Hours	120
-🎯 Learning Outcomes
+Total	6 Questions	2 Hours	120
+LEARNING OUTCOMES
 
 After completing this lab exercise, students should be able to:
 
@@ -477,14 +490,3 @@ Apply conditional operators and conditional logic.
 Identify common C programming errors.
 Distinguish between syntax, type-related, logical, and runtime/undefined-behavior issues.
 Develop and test small C programs independently.
-⏱️ Lab Overview
-Question	Activity	Duration	Marks
-1	Student Result	25 min	20
-2	Electricity Bill	25 min	20
-3	Banking Calculator	20 min	20
-4	Expression & Type Conversion	20 min	20
-5	Debugging	20 min	20
-6	Shopping Bill	20 min	20
-Total	6 Problems	2 Hours	120
-
-This version should render much more cleanly in Word, Google Docs, Markdown, or a PDF, especially because the tariff, marks distribution, checklist, and test cases are now proper tables/lists and the C code is isolated in code blocks.
