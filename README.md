@@ -1,3 +1,10 @@
+to tun multiple file of same name 
+" for i in {1..6}; do gcc -Wall "experiment$i.c" -o "$i"; done " 
+
+
+
+
+
 C PROGRAMMING LAB EXERCISE
 
 Level: Intermediate

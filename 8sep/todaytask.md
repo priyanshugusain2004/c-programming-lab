@@ -1,4 +1,9 @@
-C Programming Lab Exercise
+
+
+last lab " python3 -c 'with open("Makefile", "w") as f: f.write("CC = gcc\nCFLAGS = -Wall\nTARGETS = 1 2 3 4 5 6\n\nall: $(TARGETS)\n\n%: exprement%.c\n\t$(CC) $(CFLAGS) $< -o $@\n\n%: experiment%.c\n\t$(CC) $(CFLAGS) $< -o $@\n\nrun:\n\t@echo -n \"Enter the experiment number to run (1-6): \"\n\t@read num; \\\n\tif [ -z \"$$num\" ]; then echo \"No number entered.\"; exit 1; fi; \\\n\tif [ ! -f \"exprement$$num.c\" ] && [ ! -f \"experiment$$num.c\" ]; then echo \"Error: File does not exist!\"; exit 1; fi; \\\n\tFILE=$$( [ -f \"exprement$$num.c\" ] && echo \"exprement$$num.c\" || echo \"experiment$$num.c\" ); \\\n\t$(CC) $(CFLAGS) \"$$FILE\" -o \"$$num\"; \\\n\techo -n \"Do you want to run with default test inputs? (y/n): \"; \\\n\tread choice; \\\n\techo \"=== Running Experiment $$num ===\"; \\\n\tif [ \"$$choice\" = \"y\" ] || [ \"$$choice\" = \"Y\" ]; then \\\n\t\tcase $$num in \\\n\t\t\t1) echo -e \"5\\n10\\n20\\n30\\n40\\n50\" | ./$$num ;; \\\n\t\t\t2) echo -e \"3\\n1\\n2\\n3\" | ./$$num ;; \\\n\t\t\t3) echo -e \"5\\n3\" | ./$$num ;; \\\n\t\t\t*) echo \"No default data saved for $$num, running blank:\" && ./$$num ;; \\\n\t\tesac; \\\n\telse \\\n\t\t./$$num; \\\n\tfi\n\nclean:\n\trm -f $(TARGETS)\n")'
+
+
+" C Programming Lab Exercise
 Intermediate Level | Duration: 2 Hours
 Syllabus Coverage:
 C program structure, variables and constants, data types, operators and expressions, precedence and associativity, typecasting, formatted/unformatted I/O, and identification/correction of programming errors.
