@@ -1,0 +1,1034 @@
+MCA – Programming and Problem Solving Lab
+C Programming Practical Questions with Simple Programs
+1. Write a program to calculate the simple interest given principal, rate, and time (take input using scanf).
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    float p, r, t, si;
+ 
+    printf("Enter principal: ");
+    scanf("%f", &p);
+ 
+    printf("Enter rate: ");
+    scanf("%f", &r);
+ 
+    printf("Enter time: ");
+    scanf("%f", &t);
+ 
+    si = (p * r * t) / 100;
+ 
+    printf("Simple Interest = %.2f", si);
+    return 0;
+}
+2. Write a C program to swap two numbers using bitwise operator.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    int a, b;
+ 
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+ 
+    a = a ^ b;
+    b = a ^ b;
+    a = a ^ b;
+ 
+    printf("After swapping: a = %d, b = %d", a, b);
+    return 0;
+}
+3. Write a program to check whether a given number is even or odd using the bitwise operator.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    int n;
+ 
+    printf("Enter a number: ");
+    scanf("%d", &n);
+ 
+    if (n & 1)
+        printf("Odd Number");
+    else
+        printf("Even Number");
+ 
+    return 0;
+}
+4. Write a program to find the largest of five numbers using nested if-else.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    int a, b, c, d, e, max;
+ 
+    printf("Enter five numbers: ");
+    scanf("%d %d %d %d %d", &a, &b, &c, &d, &e);
+ 
+    max = a;
+ 
+    if (b > max)
+        max = b;
+    if (c > max)
+        max = c;
+    if (d > max)
+        max = d;
+    if (e > max)
+        max = e;
+ 
+    printf("Largest number = %d", max);
+    return 0;
+}
+5. Write a program to build a simple calculator (add, subtract, multiply, divide) using a switch statement.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    int a, b, choice;
+ 
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+ 
+    printf("\\n1. Addition\\n2. Subtraction\\n3. Multiplication\\n4. Division");
+    printf("\\nEnter choice: ");
+    scanf("%d", &choice);
+ 
+    switch (choice)
+    {
+        case 1:
+            printf("Result = %d", a + b);
+            break;
+        case 2:
+            printf("Result = %d", a - b);
+            break;
+        case 3:
+            printf("Result = %d", a * b);
+            break;
+        case 4:
+            if (b != 0)
+                printf("Result = %.2f", (float)a / b);
+            else
+                printf("Division by zero is not possible");
+            break;
+        default:
+            printf("Invalid choice");
+    }
+ 
+    return 0;
+}
+
+6. Write a program to check whether a given year is a leap year or not.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    int year;
+ 
+    printf("Enter year: ");
+    scanf("%d", &year);
+ 
+    if (year % 400 == 0)
+        printf("Leap Year");
+    else if (year % 100 == 0)
+        printf("Not a Leap Year");
+    else if (year % 4 == 0)
+        printf("Leap Year");
+    else
+        printf("Not a Leap Year");
+ 
+    return 0;
+}
+7. Write a program to print the sum of digits of a given number and also check that the number is palindrome or not.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    int n, temp, digit, sum = 0, reverse = 0;
+ 
+    printf("Enter a number: ");
+    scanf("%d", &n);
+ 
+    temp = n;
+ 
+    while (temp > 0)
+    {
+        digit = temp % 10;
+        sum = sum + digit;
+        reverse = reverse * 10 + digit;
+        temp = temp / 10;
+    }
+ 
+    printf("Sum of digits = %d\\n", sum);
+ 
+    if (n == reverse)
+        printf("Palindrome Number");
+    else
+        printf("Not a Palindrome Number");
+ 
+    return 0;
+}
+8. Write a C program using only for loops to check whether a given number is a Strong Number (a number whose sum of factorials of its digits equals the number itself), and if it is not, display the nearest strong number greater than it.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    int n, temp, digit, fact, sum, i, num;
+ 
+    printf("Enter a number: ");
+    scanf("%d", &n);
+ 
+    temp = n;
+    sum = 0;
+ 
+    for (; temp > 0; temp = temp / 10)
+    {
+        digit = temp % 10;
+        fact = 1;
+ 
+        for (i = 1; i <= digit; i++)
+            fact = fact * i;
+ 
+        sum = sum + fact;
+    }
+ 
+    if (n == 0)
+        sum = 1;
+ 
+    if (sum == n)
+        printf("Strong Number");
+    else
+    {
+        printf("Not a Strong Number\\n");
+ 
+        for (num = n + 1; ; num++)
+        {
+            temp = num;
+            sum = 0;
+ 
+            for (; temp > 0; temp = temp / 10)
+            {
+                digit = temp % 10;
+                fact = 1;
+ 
+                for (i = 1; i <= digit; i++)
+                    fact = fact * i;
+ 
+                sum = sum + fact;
+            }
+ 
+            if (num == 0)
+                sum = 1;
+ 
+            if (sum == num)
+            {
+                printf("Nearest greater Strong Number = %d", num);
+                break;
+            }
+        }
+    }
+ 
+    return 0;
+}
+9. Write a C program using only for loops to find all Perfect Numbers between 1 and n (a perfect number is one whose sum of proper divisors equals the number itself), and also display the total count found.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    int n, i, j, sum, count = 0;
+ 
+    printf("Enter value of n: ");
+    scanf("%d", &n);
+ 
+    printf("Perfect numbers are: ");
+ 
+    for (i = 1; i <= n; i++)
+    {
+        sum = 0;
+ 
+        for (j = 1; j < i; j++)
+        {
+            if (i % j == 0)
+                sum = sum + j;
+        }
+ 
+        if (sum == i)
+        {
+            printf("%d ", i);
+            count++;
+        }
+    }
+ 
+    printf("\\nTotal count = %d", count);
+    return 0;
+}
+10. Write a C program to print all prime numbers between 1 and n, and also display the count of prime numbers found and their sum.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    int n, i, j, flag, count = 0, sum = 0;
+ 
+    printf("Enter value of n: ");
+    scanf("%d", &n);
+ 
+    printf("Prime numbers are: ");
+ 
+    for (i = 2; i <= n; i++)
+    {
+        flag = 1;
+ 
+        for (j = 2; j < i; j++)
+        {
+            if (i % j == 0)
+            {
+                flag = 0;
+                break;
+            }
+        }
+ 
+        if (flag == 1)
+        {
+            printf("%d ", i);
+            count++;
+            sum = sum + i;
+        }
+    }
+ 
+    printf("\\nCount = %d", count);
+    printf("\\nSum = %d", sum);
+    return 0;
+}
+
+11. Write a program to print the Fibonacci series up to n terms using a for loop.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    int n, a = 0, b = 1, c, i;
+ 
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
+ 
+    for (i = 1; i <= n; i++)
+    {
+        printf("%d ", a);
+        c = a + b;
+        a = b;
+        b = c;
+    }
+ 
+    return 0;
+}
+12. Write a program to find the factorial of a number using recursion.
+Program:
+#include <stdio.h>
+ 
+int factorial(int n)
+{
+    if (n == 0 || n == 1)
+        return 1;
+ 
+    return n * factorial(n - 1);
+}
+ 
+int main()
+{
+    int n;
+ 
+    printf("Enter a number: ");
+    scanf("%d", &n);
+ 
+    if (n < 0)
+        printf("Factorial is not defined for negative numbers");
+    else
+        printf("Factorial = %d", factorial(n));
+ 
+    return 0;
+}
+13. Write a program using functions to check whether a number is an Armstrong number (call by value).
+Program:
+#include <stdio.h>
+ 
+int power(int base, int exp)
+{
+    int result = 1, i;
+ 
+    for (i = 1; i <= exp; i++)
+        result = result * base;
+ 
+    return result;
+}
+ 
+int isArmstrong(int n)
+{
+    int temp = n, digits = 0, digit, sum = 0;
+ 
+    if (n == 0)
+        digits = 1;
+ 
+    for (temp = n; temp > 0; temp = temp / 10)
+        digits++;
+ 
+    temp = n;
+ 
+    for (; temp > 0; temp = temp / 10)
+    {
+        digit = temp % 10;
+        sum = sum + power(digit, digits);
+    }
+ 
+    return sum == n;
+}
+ 
+int main()
+{
+    int n;
+ 
+    printf("Enter a number: ");
+    scanf("%d", &n);
+ 
+    if (n >= 0 && isArmstrong(n))
+        printf("Armstrong Number");
+    else
+        printf("Not an Armstrong Number");
+ 
+    return 0;
+}
+14. Write a program to demonstrate call by value vs call by address using two functions that attempt to swap values.
+Program:
+#include <stdio.h>
+ 
+void swapValue(int a, int b)
+{
+    int temp = a;
+    a = b;
+    b = temp;
+ 
+    printf("Inside call by value: %d %d\\n", a, b);
+}
+ 
+void swapAddress(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+ 
+int main()
+{
+    int a = 10, b = 20;
+ 
+    printf("Original values: %d %d\\n", a, b);
+ 
+    swapValue(a, b);
+    printf("After call by value: %d %d\\n", a, b);
+ 
+    swapAddress(&a, &b);
+    printf("After call by address: %d %d", a, b);
+ 
+    return 0;
+}
+15. Write a menu-driven program (using switch inside a while loop) to perform basic arithmetic operations repeatedly until the user chooses to exit.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    int a, b, choice;
+ 
+    while (1)
+    {
+        printf("\\n1. Addition\\n2. Subtraction\\n3. Multiplication");
+        printf("\\n4. Division\\n5. Exit");
+        printf("\\nEnter choice: ");
+        scanf("%d", &choice);
+ 
+        if (choice == 5)
+            break;
+ 
+        if (choice < 1 || choice > 5)
+        {
+            printf("Invalid choice");
+            continue;
+        }
+ 
+        printf("Enter two numbers: ");
+        scanf("%d %d", &a, &b);
+ 
+        switch (choice)
+        {
+            case 1:
+                printf("Result = %d", a + b);
+                break;
+            case 2:
+                printf("Result = %d", a - b);
+                break;
+            case 3:
+                printf("Result = %d", a * b);
+                break;
+            case 4:
+                if (b != 0)
+                    printf("Result = %.2f", (float)a / b);
+                else
+                    printf("Cannot divide by zero");
+                break;
+        }
+    }
+ 
+    return 0;
+}
+
+16(a). Write a C program to print the following star diamond pattern.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    int i, j;
+ 
+    for (i = 1; i <= 5; i++)
+    {
+        for (j = 1; j <= 5 - i; j++)
+            printf(" ");
+ 
+        for (j = 1; j <= 2 * i - 1; j++)
+            printf("*");
+ 
+        printf("\\n");
+    }
+ 
+    for (i = 4; i >= 1; i--)
+    {
+        for (j = 1; j <= 5 - i; j++)
+            printf(" ");
+ 
+        for (j = 1; j <= 2 * i - 1; j++)
+            printf("*");
+ 
+        printf("\\n");
+    }
+ 
+    return 0;
+}
+16(b). Write a C program to print the following alphabet diamond pattern.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    int i, j;
+ 
+    for (i = 1; i <= 5; i++)
+    {
+        for (j = 1; j <= 5 - i; j++)
+            printf(" ");
+ 
+        for (j = 0; j < i; j++)
+            printf("%c", 'A' + j);
+ 
+        for (j = i - 2; j >= 0; j--)
+            printf("%c", 'A' + j);
+ 
+        printf("\\n");
+    }
+ 
+    for (i = 4; i >= 1; i--)
+    {
+        for (j = 1; j <= 5 - i; j++)
+            printf(" ");
+ 
+        for (j = 0; j < i; j++)
+            printf("%c", 'A' + j);
+ 
+        for (j = i - 2; j >= 0; j--)
+            printf("%c", 'A' + j);
+ 
+        printf("\\n");
+    }
+ 
+    return 0;
+}
+16(c). Write a C program to print the following number pyramid pattern.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    int i, j;
+ 
+    for (i = 1; i <= 5; i++)
+    {
+        for (j = 1; j <= 5 - i; j++)
+            printf(" ");
+ 
+        for (j = 1; j <= i; j++)
+            printf("%d", j);
+ 
+        for (j = i - 1; j >= 1; j--)
+            printf("%d", j);
+ 
+        printf("\\n");
+    }
+ 
+    return 0;
+}
+17. Write a program to find the largest and smallest element in a 1D array.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    int a[100], n, i, max, min;
+ 
+    printf("Enter array size: ");
+    scanf("%d", &n);
+ 
+    printf("Enter array elements:\\n");
+    for (i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+ 
+    max = min = a[0];
+ 
+    for (i = 1; i < n; i++)
+    {
+        if (a[i] > max)
+            max = a[i];
+        if (a[i] < min)
+            min = a[i];
+    }
+ 
+    printf("Largest = %d\\n", max);
+    printf("Smallest = %d", min);
+    return 0;
+}
+18. Write a program to sort an array of n elements using bubble sort.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    int a[100], n, i, j, temp;
+ 
+    printf("Enter array size: ");
+    scanf("%d", &n);
+ 
+    printf("Enter array elements:\\n");
+    for (i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+ 
+    for (i = 0; i < n - 1; i++)
+    {
+        for (j = 0; j < n - i - 1; j++)
+        {
+            if (a[j] > a[j + 1])
+            {
+                temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+ 
+    printf("Sorted array: ");
+    for (i = 0; i < n; i++)
+        printf("%d ", a[i]);
+ 
+    return 0;
+}
+
+19. Write a program to search for an element in an array using linear search.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    int a[100], n, i, key, found = 0;
+ 
+    printf("Enter array size: ");
+    scanf("%d", &n);
+ 
+    printf("Enter array elements:\\n");
+    for (i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+ 
+    printf("Enter element to search: ");
+    scanf("%d", &key);
+ 
+    for (i = 0; i < n; i++)
+    {
+        if (a[i] == key)
+        {
+            printf("Element found at position %d", i + 1);
+            found = 1;
+            break;
+        }
+    }
+ 
+    if (found == 0)
+        printf("Element not found");
+ 
+    return 0;
+}
+20. Write a program to multiplication of two matrices using 2D arrays.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    int a[10][10], b[10][10], c[10][10];
+    int r1, c1, r2, c2, i, j, k;
+ 
+    printf("Enter rows and columns of first matrix: ");
+    scanf("%d %d", &r1, &c1);
+ 
+    printf("Enter rows and columns of second matrix: ");
+    scanf("%d %d", &r2, &c2);
+ 
+    if (c1 != r2)
+    {
+        printf("Matrix multiplication is not possible");
+        return 0;
+    }
+ 
+    printf("Enter first matrix:\\n");
+    for (i = 0; i < r1; i++)
+        for (j = 0; j < c1; j++)
+            scanf("%d", &a[i][j]);
+ 
+    printf("Enter second matrix:\\n");
+    for (i = 0; i < r2; i++)
+        for (j = 0; j < c2; j++)
+            scanf("%d", &b[i][j]);
+ 
+    for (i = 0; i < r1; i++)
+    {
+        for (j = 0; j < c2; j++)
+        {
+            c[i][j] = 0;
+            for (k = 0; k < c1; k++)
+                c[i][j] = c[i][j] + a[i][k] * b[k][j];
+        }
+    }
+ 
+    printf("Product matrix:\\n");
+    for (i = 0; i < r1; i++)
+    {
+        for (j = 0; j < c2; j++)
+            printf("%d ", c[i][j]);
+        printf("\\n");
+    }
+ 
+    return 0;
+}
+21. Write a program to find the addition and transpose of a matrix.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    int a[10][10], b[10][10], sum[10][10];
+    int r, c, i, j;
+ 
+    printf("Enter rows and columns: ");
+    scanf("%d %d", &r, &c);
+ 
+    printf("Enter first matrix:\\n");
+    for (i = 0; i < r; i++)
+        for (j = 0; j < c; j++)
+            scanf("%d", &a[i][j]);
+ 
+    printf("Enter second matrix:\\n");
+    for (i = 0; i < r; i++)
+        for (j = 0; j < c; j++)
+            scanf("%d", &b[i][j]);
+ 
+    printf("Addition of matrices:\\n");
+    for (i = 0; i < r; i++)
+    {
+        for (j = 0; j < c; j++)
+        {
+            sum[i][j] = a[i][j] + b[i][j];
+            printf("%d ", sum[i][j]);
+        }
+        printf("\\n");
+    }
+ 
+    printf("Transpose of first matrix:\\n");
+    for (i = 0; i < c; i++)
+    {
+        for (j = 0; j < r; j++)
+            printf("%d ", a[j][i]);
+        printf("\\n");
+    }
+ 
+    return 0;
+}
+22. Write a program to check whether a given string is a palindrome (without using built-in reverse function).
+Program:
+#include <stdio.h>
+#include <string.h>
+ 
+int main()
+{
+    char str[100];
+    int i, len, flag = 1;
+ 
+    printf("Enter a string: ");
+    scanf("%99s", str);
+ 
+    len = strlen(str);
+ 
+    for (i = 0; i < len / 2; i++)
+    {
+        if (str[i] != str[len - i - 1])
+        {
+            flag = 0;
+            break;
+        }
+    }
+ 
+    if (flag == 1)
+        printf("Palindrome String");
+    else
+        printf("Not a Palindrome String");
+ 
+    return 0;
+}
+23. Write a program to count the number of vowels and consonants in a given string.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    char str[100];
+    int i, vowels = 0, consonants = 0;
+ 
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+ 
+    for (i = 0; str[i] != '\\0'; i++)
+    {
+        char ch = str[i];
+ 
+        if (ch >= 'A' && ch <= 'Z')
+            ch = ch + 32;
+ 
+        if (ch >= 'a' && ch <= 'z')
+        {
+            if (ch == 'a' || ch == 'e' || ch == 'i' ||
+                ch == 'o' || ch == 'u')
+                vowels++;
+            else
+                consonants++;
+        }
+    }
+ 
+    printf("Vowels = %d\\n", vowels);
+    printf("Consonants = %d", consonants);
+    return 0;
+}
+
+24. Write a program to concatenate two strings without using the strcat() function.
+Program:
+#include <stdio.h>
+ 
+int main()
+{
+    char str1[200], str2[100];
+    int i, j;
+ 
+    printf("Enter first string (one word): ");
+    scanf("%99s", str1);
+ 
+    printf("Enter second string (one word): ");
+    scanf("%99s", str2);
+ 
+    for (i = 0; str1[i] != '\\0'; i++)
+        ;
+ 
+    for (j = 0; str2[j] != '\\0'; j++)
+    {
+        str1[i] = str2[j];
+        i++;
+    }
+ 
+    str1[i] = '\\0';
+ 
+    printf("Concatenated string = %s", str1);
+    return 0;
+}
+25. Write a program to dynamically allocate memory for an array using malloc() and free it using free().
+Program:
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main()
+{
+    int *a, n, i;
+ 
+    printf("Enter array size: ");
+    scanf("%d", &n);
+ 
+    if (n <= 0)
+    {
+        printf("Invalid array size");
+        return 0;
+    }
+ 
+    a = (int *)malloc(n * sizeof(int));
+ 
+    if (a == NULL)
+    {
+        printf("Memory allocation failed");
+        return 0;
+    }
+ 
+    printf("Enter array elements:\\n");
+    for (i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+ 
+    printf("Array elements: ");
+    for (i = 0; i < n; i++)
+        printf("%d ", a[i]);
+ 
+    free(a);
+    printf("\\nMemory released");
+ 
+    return 0;
+}
+26. Write a program using a structure to store and display details (name, roll no, marks) of 5 students.
+Program:
+#include <stdio.h>
+ 
+struct student
+{
+    char name[50];
+    int roll;
+    float marks;
+};
+ 
+int main()
+{
+    struct student s[5];
+    int i;
+ 
+    for (i = 0; i < 5; i++)
+    {
+        printf("\\nEnter details of student %d\\n", i + 1);
+ 
+        printf("Enter name (one word): ");
+        scanf("%49s", s[i].name);
+ 
+        printf("Enter roll number: ");
+        scanf("%d", &s[i].roll);
+ 
+        printf("Enter marks: ");
+        scanf("%f", &s[i].marks);
+    }
+ 
+    printf("\\nStudent Details:\\n");
+ 
+    for (i = 0; i < 5; i++)
+    {
+        printf("\\nName: %s", s[i].name);
+        printf("\\nRoll Number: %d", s[i].roll);
+        printf("\\nMarks: %.2f\\n", s[i].marks);
+    }
+ 
+    return 0;
+}
+27. Write a program to demonstrate the difference between structure and union by printing the size of each.
+Program:
+#include <stdio.h>
+ 
+struct student
+{
+    int roll;
+    float marks;
+    char grade;
+};
+ 
+union data
+{
+    int roll;
+    float marks;
+    char grade;
+};
+ 
+int main()
+{
+    printf("Size of structure = %lu bytes\\n",
+           (unsigned long)sizeof(struct student));
+ 
+    printf("Size of union = %lu bytes\\n",
+           (unsigned long)sizeof(union data));
+ 
+    return 0;
+}
+28. Write a program to write student records (name, roll no) into a file and then read and display them back.
+Program:
+#include <stdio.h>
+ 
+struct student
+{
+    char name[50];
+    int roll;
+};
+ 
+int main()
+{
+    struct student s;
+    FILE *fp;
+    int i;
+ 
+    fp = fopen("student.txt", "w");
+ 
+    if (fp == NULL)
+    {
+        printf("File cannot be opened");
+        return 0;
+    }
+ 
+    for (i = 0; i < 5; i++)
+    {
+        printf("Enter student name (one word): ");
+        scanf("%49s", s.name);
+ 
+        printf("Enter roll number: ");
+        scanf("%d", &s.roll);
+ 
+        fprintf(fp, "%s %d\\n", s.name, s.roll);
+    }
+ 
+    fclose(fp);
+ 
+    fp = fopen("student.txt", "r");
+ 
+    if (fp == NULL)
+    {
+        printf("File cannot be opened");
+        return 0;
+    }
+ 
+    printf("\\nStudent Records:\\n");
+ 
+    while (fscanf(fp, "%49s %d", s.name, &s.roll) == 2)
+    {
+        printf("\\nName: %s", s.name);
+        printf("\\nRoll Number: %d\\n", s.roll);
+    }
+ 
+    fclose(fp);
+    return 0;
+}
